@@ -15,7 +15,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   late Future<Estado> novoEstado;
-  late int id = 01001000;
+  late int id = 37701000;
   TextStyle titleStyle = GoogleFonts.openSans(
       fontSize: 35, color: Colors.white, fontWeight: FontWeight.w600);
 
@@ -31,11 +31,14 @@ class _HomeState extends State<Home> {
 
   void outroCEP() => setState(() {
         id++;
+        if (id >= 37701008) {
+          id = 37701008;
+        }
       });
   void antesCEP() => setState(() {
         id--;
-        if (id <= 0) {
-          id = 1;
+        if (id <= 37700999) {
+          id = 37701000;
         }
       });
   List<Color> background = [

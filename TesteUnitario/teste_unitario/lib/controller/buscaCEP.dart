@@ -5,7 +5,7 @@ import 'dart:convert';
 
 Future<Estado> buscarCEP([client]) async {
   final response =
-      await http.get(Uri.parse('https://viacep.com.br/ws/01001000/json/'));
+      await http.get(Uri.parse('https://viacep.com.br/ws/37701000/json/'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
