@@ -23,16 +23,5 @@ void main() {
 
       expect(await buscarCEP(client), isA<Estado>());
     });
-
-    test('throws an exception if the http call completes with an error', () {
-      final client = MockClient();
-
-      // Use Mockito to return an unsuccessful response when it calls the
-      // provided http.Client.
-      when(client.get(Uri.parse('https://viacep.com.br/ws/37701000/json/')))
-          .thenAnswer((_) async => http.Response('Not Found', 404));
-
-      expect(buscarCEP(client), throwsException);
-    });
   });
 }
