@@ -18,7 +18,7 @@ Future<Estado> buscarCEP([client]) async {
   }
 }
 
-Future<Estado> buscarCEPporID(String cep) async {
+Future<Estado> buscarNovoCEP(String cep) async {
   final response =
       await http.get(Uri.parse('https://viacep.com.br/ws/$cep/json/'));
 

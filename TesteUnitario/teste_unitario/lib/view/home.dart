@@ -15,7 +15,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   late Future<Estado> novoEstado;
-  late int id = 1;
+  late int id = 01001000;
   TextStyle titleStyle = GoogleFonts.openSans(
       fontSize: 35, color: Colors.white, fontWeight: FontWeight.w600);
 
@@ -26,13 +26,13 @@ class _HomeState extends State<Home> {
   }
 
   void refresh() => setState(() {
-        novoEstado = buscarCEPporID(id.toString());
+        novoEstado = buscarNovoCEP(id.toString());
       });
 
-  void nextAlbum() => setState(() {
+  void outroCEP() => setState(() {
         id++;
       });
-  void previousAlbum() => setState(() {
+  void antesCEP() => setState(() {
         id--;
         if (id <= 0) {
           id = 1;
@@ -67,17 +67,15 @@ class _HomeState extends State<Home> {
               Container(
                   padding: const EdgeInsets.only(top: 150, bottom: 20),
                   child: Text(
-                    'Album\nSearch',
+                    'Busca\nCEP',
                     style: titleStyle,
                   )),
               FutureBuilder<Estado>(
-                future: futureAlbum,
+                future: novoEstado,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    return outputCard(
-                        snapshot.data!.title,
-                        snapshot.data!.id.toString(),
-                        snapshot.data!.userId.toString());
+                    return outputCard(snapshot.data!.localidade,
+                        snapshot.data!.ibge, snapshot.data!.cep);
                   } else if (snapshot.hasError) {
                     return Text('${snapshot.error}');
                   }
@@ -146,7 +144,7 @@ class _HomeState extends State<Home> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: FloatingActionButton(
-              onPressed: () => {previousAlbum(), refresh()},
+              onPressed: () => {antesCEP(), refresh()},
               backgroundColor: Colors.transparent,
               shape: const CircleBorder(side: BorderSide(color: Colors.white)),
               child: const Icon(Icons.arrow_left_outlined),
@@ -155,7 +153,7 @@ class _HomeState extends State<Home> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: FloatingActionButton(
-              onPressed: () => {nextAlbum(), refresh()},
+              onPressed: () => {outroCEP(), refresh()},
               backgroundColor: Colors.transparent,
               shape: const CircleBorder(side: BorderSide(color: Colors.white)),
               child: const Icon(Icons.arrow_right_outlined),
