@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
               Container(
                   padding: const EdgeInsets.only(top: 150, bottom: 20),
                   child: Text(
-                    'Busca\nCEP',
+                    'Busca\n CEP',
                     style: titleStyle,
                   )),
               FutureBuilder<Estado>(
@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return outputCard(snapshot.data!.localidade,
-                        snapshot.data!.ibge, snapshot.data!.cep);
+                        snapshot.data!.logradouro, snapshot.data!.bairro);
                   } else if (snapshot.hasError) {
                     return Text('${snapshot.error}');
                   }
@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget outputCard(String title, String id, String userId) {
+  Widget outputCard(String title, String logradouro, String bairro) {
     TextStyle nameStyle =
         GoogleFonts.openSans(fontSize: 15, fontWeight: FontWeight.w600);
 
@@ -124,14 +124,14 @@ class _HomeState extends State<Home> {
               Padding(
                 padding: const EdgeInsets.only(top: 15),
                 child: Text(
-                  'Id: $id',
+                  'Logradouro: $logradouro',
                   style: contentStyle,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
                 child: Text(
-                  'User id: $userId',
+                  'Bairro: $bairro',
                   style: contentStyle,
                 ),
               ),
