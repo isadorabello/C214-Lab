@@ -3,8 +3,9 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 
-Future<Estado> fetchAlbum([client]) async {
-  final response = await http.get(Uri.parse('https://viacep.com.br'));
+Future<Estado> buscarCEP([client]) async {
+  final response =
+      await http.get(Uri.parse('https://viacep.com.br/ws/01001000/json/'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -17,7 +18,7 @@ Future<Estado> fetchAlbum([client]) async {
   }
 }
 
-Future<Estado> fetchAlbumById(String cep) async {
+Future<Estado> buscarCEPporID(String cep) async {
   final response =
       await http.get(Uri.parse('https://viacep.com.br/ws/$cep/json/'));
 

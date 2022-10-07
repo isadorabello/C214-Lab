@@ -14,7 +14,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  late Future<Estado> futureAlbum;
+  late Future<Estado> novoEstado;
   late int id = 1;
   TextStyle titleStyle = GoogleFonts.openSans(
       fontSize: 35, color: Colors.white, fontWeight: FontWeight.w600);
@@ -22,11 +22,11 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    futureAlbum = fetchAlbum(http.Client());
+    novoEstado = buscarCEP(http.Client());
   }
 
   void refresh() => setState(() {
-        futureAlbum = fetchAlbumById(id.toString());
+        novoEstado = buscarCEPporID(id.toString());
       });
 
   void nextAlbum() => setState(() {
