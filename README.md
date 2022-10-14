@@ -1,3 +1,3 @@
-<h1>EXERCICIOS LAB C214<h1>
+# EXERCICIOS LAB C214
 
-Novo repositório para melhor organização :)
+## Novo repositório para melhor organização :)
