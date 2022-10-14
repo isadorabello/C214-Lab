@@ -33,10 +33,3 @@ flutter test
 | http:            | ^0.13.5      |
 | auto_size_text:  | ^3.0.0       |
 | google_fonts:    | ^3.0.1       |
-
-
-## Autores
-
-| **Nome**        |
-|-----------------|
-| [Isadora Bello] |
