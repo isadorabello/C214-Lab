@@ -1,4 +1,4 @@
-[![CI](https://github.com/isadorabello/C214-Lab/blob/main/.github/workflows/CI.yml/badge.svg)](https://github.com/isadorabello/C214-Lab/blob/main/.github/workflows/CI.yml)
+[![CI](https://github.com/isadorabello/C214-Lab/actions/workflows/CI.yml/badge.svg)](https://github.com/isadorabello/C214-Lab/actions/workflows/CI.yml)
 
 # Flutter Rest API
 
