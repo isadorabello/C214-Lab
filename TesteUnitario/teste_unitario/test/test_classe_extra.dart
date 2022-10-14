@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:teste_unitario/classe_extra.dart';
+import 'package:teste_unitario/example/classe_extra.dart';
 
 void main() {
   test('Name value should change to -Karol Lima-', () {
