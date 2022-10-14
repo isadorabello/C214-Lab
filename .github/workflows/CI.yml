@@ -8,12 +8,10 @@ name: CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
     
 defaults:
   run:
-    working-directory: ./TesteUnitario/teste_unitario/
+    working-directory: ./teste_unitario/
 
 jobs:
   build:
