@@ -1,20 +1,20 @@
-import 'package:test/test.dart';
-import 'package:teste_unitario/example/classe_extra.dart';
+// import 'package:test/test.dart';
+// import 'package:teste_unitario/example/classe_extra.dart';
 
-void main() {
-  test('Name value should change to -Karol Lima-', () {
-    final nomeTeste = NomeAluno();
+// void main() {
+//   test('Name value should change to -Karol Lima-', () {
+//     final nomeTeste = NomeAluno();
 
-    nomeTeste.alterarNome();
+//     nomeTeste.alterarNome();
 
-    expect(nomeTeste.nome, 'Karol Lima');
-  });
+//     expect(nomeTeste.nome, 'Karol Lima');
+//   });
 
-  test('Name value should change to empty space', () {
-    final nomeTeste = NomeAluno();
+//   test('Name value should change to empty space', () {
+//     final nomeTeste = NomeAluno();
 
-    nomeTeste.limparNome();
+//     nomeTeste.limparNome();
 
-    expect(nomeTeste.nome, ' ');
-  });
-}
+//     expect(nomeTeste.nome, ' ');
+//   });
+// }
